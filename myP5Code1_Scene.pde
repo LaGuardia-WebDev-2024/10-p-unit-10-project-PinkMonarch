@@ -18,8 +18,7 @@ var baguetteX = 50;
   textSize(15);
   text(bakeryLabels[0], 70, 105);
   text(bakeryLabels[1], 70, 185);
-
-   while(baguetteX < 300){
+  while(baguetteX < 300){
     text("🥖", baguetteX, 160);
     baguetteX += 30; 
      
@@ -27,7 +26,8 @@ var baguetteX = 50;
      
      }
 
-
+  var tropicalFruits = ["🍓", "🍇", "🍍", "🍌"]
+  
 
 }
 
