@@ -14,17 +14,18 @@ html{
   width: 100%;
 }
 
-#myCanvas1 {
+#myCanva1 {
   border: 1px solid black;
-  background-image: url("supermarket-interior-shelf_165488-3982.avif");
+  background-image: url("https://static.vecteezy.com/system/resources/previews/052/104/953/non_2x/bunting-flags-with-confetti-on-beige-background-celebration-wallpaper-vector.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
 
 #myCanvas2 {
-  border: 1px solid black;
+  border: 1px solid rgb(255, 194, 194);
   border-radius: 30px;
+  background-image: url("https://static.vecteezy.com/system/resources/previews/052/104/953/non_2x/bunting-flags-with-confetti-on-beige-background-celebration-wallpaper-vector.jpg");
 }
 
 
