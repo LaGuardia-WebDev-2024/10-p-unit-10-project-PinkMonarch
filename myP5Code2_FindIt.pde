@@ -1,7 +1,7 @@
 var balloonXPos = [];
 var balloonYPos = [];
 var balloon = "🎈";
-var balloonTotal = 10;
+var balloonTotal = 100;
 
 var moneyXPos = [];
 var moneyYPos = [];
@@ -9,7 +9,11 @@ var money = "💵";
 var moneyTotal = 3;
 var moneyFound = 0;
 
-
+var unicornXPos = [];
+var unicornYPos = [];
+var unicorn = "🦄";
+var unicornTotal = 1;
+var unicornFound = 0;
 
 
 setup = function() {
@@ -44,6 +48,25 @@ var check = function(xClick, yClick){
   }
 }
 
+mouseClicked = function(){
+  check(mouseX, mouseY);
+}
+
+
+var check = function(xClick, yClick){
+  for(var i = 0; i <unicornXPos.length; i++){
+  if(dist(xClick - 5, yClick - 5, unicornXPos[i], unicornYPos[i])<15){
+  unicornXPos.splice(i, 1);
+  unicornYPos.splice(i, 1);
+  unicornFound++;
+}
+  }
+}
+
+
+
+
+
 var display = function(){
 background(0,0,0,0)
   
@@ -57,6 +80,27 @@ background(0,0,0,0)
     text(balloon, balloonXPos[i], balloonYPos[i]);
   }
 
+
+for(var i = 0; i < unicornXPos.length; i ++){
+  text(unicorn, unicornXPos[i], unicornYPos[i]);
+}
+
+
+
+
+
+fill(0,0,0);
+rect(0,400,600,50);
+fill(200,200,200);
+text("find the special " + unicorn + "s  |  " + unicorn + " " +unicornFound + "/" + unicornTotal, 0, 425);
+
+if(unicornFound == unicornTotal){
+  fill(200,100,50);
+  textSize(25);
+  text("You now earned $1,000! Press W", 50, 200);
+}
+
+textSize(20);
   fill(0,0,0);
   rect(0,400,600,50);
   fill(255,255,255);
@@ -67,6 +111,10 @@ background(0,0,0,0)
     textSize(50);
     text("Press 'r' to restart \nthe game", 50, 200);
   }
+
+
+
+
 }
 
 var reset = function(){
@@ -75,7 +123,9 @@ var reset = function(){
   moneyXPos = [];
   moneyYPos = [];
   moneyFound = 0;
-
+  unicornXPos = [];
+  unicornYPos = [];
+  unicornFound = 0;
 
   for(var i = 0; i < balloonTotal; i++){
     balloonXPos.push(random(0,600));
@@ -86,4 +136,18 @@ var reset = function(){
     moneyXPos.push(random(0,600));
     moneyYPos.push(random(0,400));
   }
+
+  for(var i = 0; i < unicornTotal; i++){
+    unicornXPos.push(random(0,600));
+    unicornYPos.push(random(0,400));
+  }
+
+}
+
+//background images
+var secretSceneImage = loadImage("https://media.istockphoto.com/id/1202650215/vector/fortune-teller-room-with-magic-ball-tarot-cards.jpg?s=612x612&w=0&k=20&c=ReyQf6yny4t5hutlVrixb-fYvTa8vLZlswlEiF_eFU0=");
+if(keyPressed){
+  if(key == 'w')
+  sceneImage = secretSceneImage;
+
 }
