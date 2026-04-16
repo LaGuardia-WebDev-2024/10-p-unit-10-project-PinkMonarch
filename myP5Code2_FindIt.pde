@@ -16,11 +16,18 @@ var unicornTotal = 1;
 var unicornFound = 0;
 
 
+
+
 setup = function() {
    size(600, 450); 
 
    reset();
-}
+
+};
+
+
+
+
 
 draw = function(){   
 
@@ -31,7 +38,47 @@ draw = function(){
    }
 
   display();
+
+fill(220,10,5)
+
+var message = "Lucky Charms";
+var y = 40;
+while(y < 400) {
+  text(message, 30, y);
+  y += 20;
 }
+
+
+fill(123, 10, 150);
+
+//for (start; how long; change)
+for ( var y = 60; y < 400 ; y += 50 ; ) {
+text("Theyre magically delicious!", 330, y);
+}
+
+// array
+
+var uniCorn = "super";
+
+var uniCorn = ["super", "tasty", "Flying"];
+
+// uniCorn[1]
+fill(10, 30, 200);
+text(uniCorn[0], 10, 30);
+text(uniCorn[1], 250,30);
+text(uniCorn[2], 400, 30);
+
+
+
+var numFriends = 3;
+text("The powers!" + numFriends + " Yayy!!" , 10, 150);
+
+
+}
+
+
+
+
 
 
 mouseClicked = function(){
@@ -51,6 +98,8 @@ var check = function(xClick, yClick){
 mouseClicked = function(){
   check(mouseX, mouseY);
 }
+
+
 
 
 var check = function(xClick, yClick){
@@ -142,6 +191,10 @@ var reset = function(){
     unicornYPos.push(random(0,400));
   }
 
+
+  
+
+
 }
 
 //background images
@@ -151,3 +204,7 @@ if(keyPressed){
   sceneImage = secretSceneImage;
 
 }
+
+
+
+
