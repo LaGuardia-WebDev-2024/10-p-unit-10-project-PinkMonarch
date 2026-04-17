@@ -70,8 +70,8 @@ text(uniCorn[2], 400, 30);
 
 
 
-var numFriends = 3;
-text("The powers!" + numFriends + " Yayy!!" , 10, 150);
+
+text("The powers!" + uniCorn.length + " Yayy!!" , 175, 165);
 
 
 }
